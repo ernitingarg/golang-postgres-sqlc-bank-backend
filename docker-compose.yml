@@ -14,5 +14,15 @@ services:
     volumes:
       - postgresdb-data:/var/lib/postgresql/data
 
+  sqlc:
+    image: sqlc/sqlc
+    container_name: sqlc
+    volumes:
+      - .:/src
+    command: 
+      - generate
+    working_dir: /src
+    restart: always
+
 volumes:
   postgresdb-data:

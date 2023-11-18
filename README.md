@@ -9,6 +9,9 @@
 - `golang-migrate`:
   - [Download](https://github.com/golang-migrate/migrate/tree/master/cmd/migrate)
   - `migrate --version`
+- `sqlc` (if not to be used as docker)
+  - [Download](https://docs.sqlc.dev/en/latest/overview/install.html)
+  - `sqlc version`
 
 ## Run docker containers locally
 
@@ -41,6 +44,7 @@ make remove
 
 ```bash
 make logs_db
+make logs_sqlc
 ```
 
 - To connect to Postgres database manually
@@ -70,4 +74,10 @@ make migrate_create NAME=init
 ```bash
 make migrate_up
 make migrate_down
+```
+
+- Code generation
+
+```bash
+Code from sql is automatically generated using sqlc docker container which has command `generate`.
 ```
