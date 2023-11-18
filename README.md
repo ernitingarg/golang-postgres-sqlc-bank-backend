@@ -79,5 +79,5 @@ make migrate_down
 - Code generation
 
 ```bash
-Code from sql is automatically generated using sqlc docker container which has command `generate`.
+Code from db/queries is automatically generated using sqlc docker container which has command `generate`.
 ```
