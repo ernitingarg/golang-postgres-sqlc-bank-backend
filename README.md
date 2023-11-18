@@ -6,6 +6,9 @@
 - Make:
   - [Download](https://gnuwin32.sourceforge.net/packages/make.htm) or `choco install make`
   - `make --version`
+- `golang-migrate`:
+  - [Download](https://github.com/golang-migrate/migrate/tree/master/cmd/migrate)
+  - `migrate --version`
 
 ## Run docker containers locally
 
@@ -51,4 +54,13 @@ make logs_db
 
 ```bash
 \dt;
+```
+
+## Migration
+
+- To create migration
+
+```bash
+make migrate_create
+make migrate_create NAME=init
 ```

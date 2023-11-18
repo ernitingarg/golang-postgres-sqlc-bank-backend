@@ -10,4 +10,11 @@ remove:
 logs_db:
 	docker-compose logs postgres
 
-.PHNOY: start stop remove logs_db
+ifndef NAME
+override NAME=init
+endif
+
+migrate_create:
+	migrate create -ext sql -dir db/migrations $(NAME)
+
+.PHNOY: start stop remove logs_db migrate_create
