@@ -64,3 +64,10 @@ make logs_db
 make migrate_create
 make migrate_create NAME=init
 ```
+
+- To apply migration
+
+```bash
+make migrate_up
+make migrate_down
+```
