@@ -26,4 +26,7 @@ migrate_up:
 migrate_down:
 	migrate -path db/migrations -database "postgresql://admin:password123@localhost:5432/postgresdb?sslmode=disable" down
 
-.PHNOY: start stop remove logs_db logs_sqlc migrate_create migrate_up migrate_down
+test:
+	go test -v -cover ./...
+
+.PHNOY: start stop remove logs_db logs_sqlc migrate_create migrate_up migrate_down test
