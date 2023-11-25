@@ -38,7 +38,7 @@ func TestCreateAccount(t *testing.T) {
 func TestGetAccount(t *testing.T) {
 	account1 := createRandomAccount(t)
 
-	account2, err := testQueries.GetAcount(context.Background(), account1.ID)
+	account2, err := testQueries.GetAccount(context.Background(), account1.ID)
 	assert.NoError(t, err)
 	assert.NotEmpty(t, account2)
 
@@ -74,7 +74,7 @@ func TestDeleteAccount(t *testing.T) {
 	err := testQueries.DeleteAccount(context.Background(), account1.ID)
 	assert.NoError(t, err)
 
-	account2, err := testQueries.GetAcount(context.Background(), account1.ID)
+	account2, err := testQueries.GetAccount(context.Background(), account1.ID)
 	assert.Error(t, err)
 	assert.EqualError(t, err, pgx.ErrNoRows.Error())
 	assert.Empty(t, account2)
