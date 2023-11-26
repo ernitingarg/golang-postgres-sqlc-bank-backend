@@ -1,3 +1,7 @@
+# Load variables from the .env file
+include app.env
+export
+
 start:
 	docker-compose up -d
 
@@ -24,10 +28,10 @@ migrate_create:
 	migrate create -ext sql -dir db/migrations $(NAME)
 
 migrate_up:
-	migrate -path db/migrations -database "postgresql://admin:password123@localhost:5432/postgresdb?sslmode=disable" up
+	migrate -path db/migrations -database $(DATABASE_URL) up
 
 migrate_down:
-	migrate -path db/migrations -database "postgresql://admin:password123@localhost:5432/postgresdb?sslmode=disable" down
+	migrate -path db/migrations -database $(DATABASE_URL) down
 
 build:
 	go build -v ./...

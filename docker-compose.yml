@@ -5,11 +5,11 @@ services:
     image: postgres:latest
     container_name: postgres
     environment:
-      POSTGRES_DB: postgresdb
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: ${DATABASE_NAME}
+      POSTGRES_USER: ${DATABASE_USER}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
     ports:
-      - 5432:5432
+      - ${DATABASE_PORT}:${DATABASE_PORT}
     restart: always
     volumes:
       - postgresdb-data:/var/lib/postgresql/data
