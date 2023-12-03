@@ -39,4 +39,7 @@ build:
 test:
 	go test -v -cover ./...
 
-.PHNOY: start stop remove destroy logs_db logs_sqlc migrate_create migrate_up migrate_down build test
+server:
+	go run main.go
+
+.PHNOY: start stop remove destroy logs_db logs_sqlc migrate_create migrate_up migrate_down build test server
