@@ -6,7 +6,7 @@ import (
 )
 
 // execTx executes operations within a single transaction
-func (store *Store) execTx(ctx context.Context, fn func(*Queries) error) error {
+func (store *SqlStore) execTx(ctx context.Context, fn func(*Queries) error) error {
 
 	tx, err := store.connPool.Begin(ctx)
 	if err != nil {

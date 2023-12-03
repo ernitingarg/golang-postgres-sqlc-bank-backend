@@ -12,6 +12,9 @@
 - `sqlc` (if not to be used as docker)
   - [Download](https://docs.sqlc.dev/en/latest/overview/install.html)
   - `sqlc version`
+- `gomock`:
+  - [Install] `go install go.uber.org/mock/mockgen@latest`
+  - `mockgen --version`
 
 ## Run docker containers locally
 
@@ -80,4 +83,20 @@ make migrate_down
 
 ```bash
 Code from db/queries is automatically generated using sqlc docker container which has command `generate`.
+```
+
+## Server
+
+- To start server
+
+```bash
+make server
+```
+
+## Test
+
+- To run unit tests
+
+```bash
+make test
 ```

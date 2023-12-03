@@ -42,4 +42,7 @@ test:
 server:
 	go run main.go
 
-.PHNOY: start stop remove destroy logs_db logs_sqlc migrate_create migrate_up migrate_down build test server
+mock:
+	mockgen -source="db/sqlc/store.go" -destination="db/mock/store.go" -package mockdb
+
+.PHNOY: start stop remove destroy logs_db logs_sqlc migrate_create migrate_up migrate_down build test server mock

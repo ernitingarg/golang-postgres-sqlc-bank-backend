@@ -24,7 +24,7 @@ type TransferTxResult struct {
 
 // TransferTx tranfer amount from one account to another account.
 // It creates transfer record, from/to entries and update balances of from/to accounts
-func (store *Store) TransferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error) {
+func (store *SqlStore) TransferTx(ctx context.Context, arg TransferTxParams) (TransferTxResult, error) {
 	var result TransferTxResult
 
 	amountToWithdraw := arg.Amount.Mul(decimal.NewFromFloat(-1))
