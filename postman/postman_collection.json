@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "14e5346e-ae7a-4636-82e9-b527d8fb15b0",
+		"_postman_id": "559c20f2-ef26-4e96-a885-0adbf868faa8",
 		"name": "GoGinApi",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "29865378"
@@ -253,6 +253,44 @@
 									"key": "page_size",
 									"value": "5"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Transfer",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"from_account_id\": {{id1}},\r\n    \"to_account_id\": {{id2}},\r\n    \"amount\" : {{id2}},\r\n    \"currency\" : \"{{currency1}}\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/transfers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"transfers"
 							]
 						}
 					},
