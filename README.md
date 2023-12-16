@@ -95,6 +95,12 @@ make server
 
 ## Test
 
+- To generate mock files
+
+```bash
+make mock
+```
+
 - To run unit tests
 
 ```bash

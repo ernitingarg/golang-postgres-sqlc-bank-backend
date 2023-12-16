@@ -79,3 +79,11 @@ type Transfer struct {
 	Amount    decimal.Decimal    `json:"amount"`
 	CreatedAt pgtype.Timestamptz `json:"createdAt"`
 }
+
+type User struct {
+	Name         string             `json:"name"`
+	Email        string             `json:"email"`
+	HashPassword string             `json:"hashPassword"`
+	CreatedAt    pgtype.Timestamptz `json:"createdAt"`
+	UpdatedAt    pgtype.Timestamptz `json:"updatedAt"`
+}
