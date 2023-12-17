@@ -25,7 +25,10 @@ func NewServer(store db.Store) *Server {
 	router.GET("/api/accounts", server.listAccountsHandler)
 	router.PUT("/api/accounts", server.updateAccountsHandler)
 	router.DELETE("/api/accounts/:id", server.deleteAccountsHandler)
+
 	router.POST("/api/transfers", server.createTransferHandler)
+
+	router.POST("/api/users", server.createUserHandler)
 
 	server.router = router
 
